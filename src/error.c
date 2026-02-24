@@ -24,6 +24,6 @@ void err_print_and_clear(void){
         while (m[len])
           len++;
         (void)write(2, m, (unsigned int) len);
-        (void)write(2 "\n", 1);
+        (void)write(2, "\n", 1);
     }
 }
