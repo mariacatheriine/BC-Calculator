@@ -15,6 +15,7 @@ int main(int argc, char **argv){
     vec_init(&tokens, sizeof(t_token));
     vec_init(&rpn, sizeof(t_token));
     // lexer
+    lex(argv[1], &tokens);
 
     // shunting yard -> rpn
 

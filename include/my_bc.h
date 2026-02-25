@@ -1,7 +1,7 @@
 #ifndef MY_BC_H
 #define MY_BC_H
 
-
+#include <stddef.h>
 #include <stdint.h>
 
 // for tokens and vectors public types
@@ -22,7 +22,8 @@ typedef struct s_vec {
 } t_vec;
 
 int vec_init(t_vec *v, size_t elem_size);
-int vec_free(t_vec *v);
+void vec_free(t_vec *v);
+int vec_push(t_vec *v, const void *elem);
 
 
 // tokens
@@ -45,6 +46,10 @@ typedef struct s_token {
     int precedence;     // precedence
     t_assoc assoc;      // associativity
 } t_token;
+
+
+// Return 0 on success, non-zero: error (set parse error)
+int lex(const char *s, t_vec *out_tokens);
 
 
 #endif /* MY_BC_H */
