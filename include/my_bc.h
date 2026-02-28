@@ -58,5 +58,7 @@ int lex(const char *s, t_vec *out_tokens);
 // Return 0 on success, non-zero: error (set parse error)
 int to_rpn(const t_vec *tokens, t_vec *out_rpn);
 
+// Evaluate rpn expression, return result
+int eval_rpn(const t_vec *rpn);
 
 #endif /* MY_BC_H */

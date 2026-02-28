@@ -1,7 +1,7 @@
 #include "my_bc.h"
 #include <stdio.h>
 
-/*
+
 int main(int argc, char **argv) {
     if (argc != 2){
         err_set_parse();
@@ -32,35 +32,12 @@ int main(int argc, char **argv) {
     }
 
     // evaluate rpn
+    int result = eval_rpn(&rpn);
+    printf("%d\n", result);
 
     //success
 
     vec_free(&tokens);
     vec_free(&rpn);
-    return 0;
-}*/
-int main(int argc, char **argv)
-{
-    printf("START\n");
-
-    printf("argc = %d\n", argc);
-
-    if (argc != 2)
-    {
-        printf("Wrong argc\n");
-        return 0;
-    }
-
-    printf("Input: %s\n", argv[1]);
-
-    // After lexer
-    printf("After lexer\n");
-
-    // After shunting
-    printf("After shunting\n");
-
-    // After evaluation
-    printf("After eval\n");
-
     return 0;
 }
